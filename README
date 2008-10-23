@@ -29,6 +29,9 @@
 
  TASK: The task to track time on 
 
+ Stores time in a sqlite database at ~/.rtime/rtime.sqlite3 - you can use the sqlite3
+ shell to do custom queries if desired.
+
  == Examples
 
  rtime -s 
