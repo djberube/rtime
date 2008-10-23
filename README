@@ -5,6 +5,8 @@
 
  Done. You may need to adjust the #! line in rtime.rb.
 
+ Requires ruby, sqlite3, activerecord, and rubygems.
+
  == Synopsis
 
  rtime: tracks time 

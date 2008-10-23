@@ -47,10 +47,13 @@ class TimeCommands
 		p.update_attributes(:end=>Time.now) if p
 	end
 	def self.list(task)
-			
+		total_minutes = 0.0
 		ProjectTime.find(:all, :conditions=>["task LIKE ?", task]).each do |p|
-			puts "#{p.task.ljust(10)} #{p.start.to_s(:short)}#{p.end ? "-#{p.end.to_s(:short)}" : ''} (#{(((p.end || Time.now) - (p.start))/6).floor.to_f / 10}m)"
+			minutes = ((((p.end || Time.now) - (p.start))/6).floor.to_f / 10)
+			puts "#{p.task.ljust(10)} #{p.start.to_s(:short)}#{p.end ? "-#{p.end.to_s(:short)}" : ''} (#{minutes}m)"
+			total_minutes = total_minutes + minutes
 		end
+		puts "#{'TOTAL:'.ljust(10)} #{total_minutes}m"
 	end
 	def self.clear(task)
 		ProjectTime.delete_all(["task LIKE ?", task])
