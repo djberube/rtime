@@ -1,0 +1,70 @@
+ == Installation 
+
+ cp rtime.rb /usr/bin/rtime
+ chmod a+x /usr/bin/rtime 
+
+ Done. You may need to adjust the #! line in rtime.rb.
+
+ == Synopsis
+
+ rtime: tracks time 
+
+ == Usage
+
+ rtime [OPTION] 
+
+ -h, --help:
+    show help
+
+ -s [TASK], --start [TASK]:
+	start task
+ -t [TASK], --stop [TASK]:
+	stop task 
+ -c [TASK], --clear [TASK]
+	clear entries for task
+ -l [TASK], --list [TASK]
+	list entries for task
+
+ TASK: The task to track time on 
+
+ == Examples
+
+ rtime -s 
+
+	Starts a new task with no name. 
+ 
+ rtime -s bob
+
+	Starts a new task called "bob"
+ 
+ rtime -s 
+
+	Stops a task with no name. 
+ 
+ rtime -s bob
+
+	Stops task called "bob"
+
+ rtime -l %
+	
+	Shows all tasks.
+ 
+ rtime -l bob-%
+	
+	Shows all tasks starting with "bob-"; you can use this as a hierachy, if you'd like,
+	by name tasks clientname-project, or clientname-project-task. You can, of course,
+	use any naming scheme and separator you might like. Both -l and -c take MySQL like
+	wildcards, which is why % works.
+
+	This command also displays a total. Eventually, date ranges and other options are a
+	good idea. (Patches on this or any other front are welcome.)
+
+ rtime -c %
+
+	Clears all tasks.
+ 
+ rtime -c bob-%
+
+	Clears all tasks starting with "bob-".
+
+
