@@ -8,19 +8,13 @@
 #
 # rtime [OPTION] 
 #
-# -h, --help:
-#    show help
+# -h, --help				    show help
+# -s [TASK], --start [TASK] 	start task
+# -t [TASK], --stop [TASK] 		stop task 
+# -c [TASK], --clear [TASK] 	clear entries for task
+# -l [TASK], --list [TASK] 		list entries for task
 #
-# -s [TASK], --start [TASK]:
-#	start task
-# -t [TASK], --stop [TASK]:
-#	stop task 
-# -c [TASK], --clear [TASK]
-#	clear entries for task
-# -l [TASK], --list [TASK]
-#	list entries for task
-#
-# TASK: The task to track time on. Clear and list take MySQL LIKE wildcards. 
+# TASK: The task to track time for. Clear and list take MySQL LIKE wildcards. 
 #
 
 require 'rubygems'
